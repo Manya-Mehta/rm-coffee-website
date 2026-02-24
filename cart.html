@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART-SUMMARY</title>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-items" id="cart-items">
+            <h2>Cart - items</h2>
+        </div>
+
+        <div class="cart-summary">
+            <h2>Summary</h2>
+            <p>Products: <span id="total-amount"></span></p>
+            <p>Shipping: <span>Gratis</span></p>
+            <p>Total amount (including VAT): <span id="total-amount2"></span></p>
+            <button class="btn-checkout" onclick="handleCheckout()">Go to Checkout</button>
+
+            <div class="delivery-info">
+                <p><strong>Expected shipping delivery:</strong></p>
+                <p>12.10.2020 - 14.10.2020</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const getCart = () => {
+            return fetch("http://localhost:8080/GetCart.php", {
+                method: "POST"
+            })
+            .then(((response) => response.json()))
+            //.then(data => console.log(data))
+            .then((data) => {
+                const items = data.items;
+                const cartInfo = data.cart_info;
+                const cartItems = document.getElementById("cart-items");
+                const totalAmount = document.getElementById("total-amount");
+                const totalAmount2 = document.getElementById("total-amount2");
+
+                items.forEach(item => {
+                    const itemHtml = `<div class="cart-item">
+                <img src="${item.image_url}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <div class="item-actions">
+                        <button class="btn-delete" onclick="handleDelete(${item.cart_product_id},${item.price})">Delete</button>
+                        <button class="btn-wishlist">Wishlist</button>
+                    </div>
+                </div>
+                <div class="item-price">
+
+                    <p class="price">$${item.price}</p>
+                </div>
+            </div>`;
+            cartItems.insertAdjacentHTML('beforeEnd', itemHtml);
+            totalAmount.innerHTML = '$' + cartInfo.total_amount;
+            totalAmount2.innerHTML = '$' + cartInfo.total_amount;
+        });
+                
+            })
+            ;
+        };
+
+        const handleCheckout = () => {
+            fetch("http://localhost:8080/RemoveAllCart.php", {
+                method: "POST"
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                alert("Order Placed!");
+                window.location.href = '/';
+            })
+        }
+
+        const handleDelete = (product_cart_id, product_amount) => {
+            console.log(product_cart_id, product_amount);
+            const originalPrice = document.getElementById("total-amount").innerHTML;
+            console.log(originalPrice);
+            const newPrice = parseInt(originalPrice.replace("$", "")) - product_amount;
+            console.log(newPrice);
+            fetch("/RemoveFromCart.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "product_cart_id": product_cart_id,
+                    "product_amount": newPrice
+                })
+            }).then((response) => response.json())
+            .then((data) => console.log(data))
+            .then((data) => window.location.reload());
+            
+        }
+
+        getCart();
+    </script>
+</body>
+</html>

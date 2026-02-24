@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3a1a00;
+}
+
+.navbar .logo img {
+    width: 50px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.hero {
+    background-image: url('../IMG/blog\ header.jpg');
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.cart-items {
+    width: 60%;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 100px;  /* Set a fixed width */
+    height: 100px; /* Set a fixed height to ensure uniform size */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+
+.item-details {
+    flex-grow: 2;
+    padding: 0 20px;
+}
+
+.item-price {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-qty {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cart-summary {
+    width: 35%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-checkout {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.delivery-info {
+    margin-top: 20px;
+}

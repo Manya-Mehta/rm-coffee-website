@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>COFFEE BEANS</title>
+        <link rel="stylesheet" href="CSS/beans.css" />
+        <link rel="stylesheet" href="CSS/footer.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                  <img src="IMG/main logo.png" alt="Logo">
+                </div>
+                <ul class="nav-links">
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="#">MENU</a></li>
+                  <li><a href="blog.html">BLOGS</a></li>
+                  <li><a href="#">ABOUT US</a></li>
+                </ul>
+              </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>COFFEE BEANS</h1>
+            </section>
+
+            <section class="products">
+                <div class="product" id="14">
+                    <img
+                        src="IMG/arabica-coffee-bean-1695031594-7087052.jpeg"
+                        alt="Arabica Beans"
+                    />
+                    <h3>Arabica Beans</h3>
+                    <p>₹800.00</p>
+                    <button class="add-to-cart" onclick="handleClick(14)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="15">
+                    <img src="IMG/robusta.jpeg" alt="Robusta Beans" />
+                    <h3>Robusta Beans</h3>
+                    <p>₹650.00</p>
+                    <button class="add-to-cart" onclick="handleClick(15)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="16">
+                    <img
+                        src="IMG/Arabica-coffee-Beans.jpg"
+                        alt="Excelsa Beans"
+                    />
+                    <h3>Excelsa Beans</h3>
+                    <p>₹650.00</p>
+                    <button class="add-to-cart" onclick="handleClick(16)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="17">
+                    <img
+                        src="IMG/illustration-super-close-shot-piece-liberica-coffee-bean_945369-13880.jpg.avif"
+                        alt="Liberica Beans"
+                    />
+                    <h3>Liberica Beans</h3>
+                    <p>₹700.00</p>
+                    <button class="add-to-cart" onclick="handleClick(17)">
+                        Add to Cart
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo-contact">
+                    <img
+                        src="IMG/main logo.png"
+                        alt="Company Logo"
+                        class="footer-logo"
+                    />
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p><strong>Call:</strong>8980477634</p>
+                        <p><strong>Email:</strong> support@r&mcoffee.co.in</p>
+                    </div>
+                </div>
+
+                <div class="footer-company">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Menu</li>
+                        <li>Blogs</li>
+                    </ul>
+                </div>
+
+                <div class="footer-policies">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li>Terms & Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Shipping Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2022 | A unit of R&M COFFEES</p>
+                <p>Powered by R&M COFFEES</p>
+            </div>
+        </footer>
+
+        <script>
+            const handleClick = (product_id) => {
+                const addToCart = fetch("/AddToCart.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        product_id: product_id,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((result) => console.log(result));
+            };
+        </script>
+    </body>
+</html>

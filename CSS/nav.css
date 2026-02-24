@@ -1,0 +1,60 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    width: 100px;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.link-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.nav-items {
+    display: flex;
+    gap: 20px; /* Ensure proper spacing between icons */
+}
+
+.nav-items img {
+    width: 30px;
+}
+
+.link:hover {
+    background-color: #5a2e00;
+    border-radius: 5px;
+    color: white    ;
+}
+
+.nav-items a:hover img {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}

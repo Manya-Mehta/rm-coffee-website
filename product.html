@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>COFFEE EQUIPMENTS</title>
+        <link rel="stylesheet" href="CSS/product.css" />
+        <link rel="stylesheet" href="CSS/footer.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                  <img src="IMG/main logo.png" alt="Logo">
+                </div>
+                <ul class="nav-links">
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="#">MENU</a></li>
+                  <li><a href="blog.html">BLOGS</a></li>
+                  <li><a href="#">ABOUT US</a></li>
+                </ul>
+              </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>COFFEE EQUIPMENTS</h1>
+            </section>
+
+            <section class="products">
+                <div class="product" id="8">
+                    <img src="IMG/aeropress.jpg" alt="Aeropress" />
+                    <h3>Aeropress</h3>
+                    <p>₹3,800.00</p>
+                    <button class="add-to-cart" onclick="handleClick(8)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="9">
+                    <img
+                        src="IMG/cold-brew-coffee-pot-lifestyle-1_b5f21298-e2b6-498a-b4ea-8a4685a1e8c4_1200x1200.jpg"
+                        alt="Hario Cold Brew Maker"
+                    />
+                    <h3>Hario Cold Brew Maker 1000 Ml</h3>
+                    <p>₹2,000.00</p>
+                    <button class="add-to-cart" onclick="handleClick(9)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="10">
+                    <img
+                        src="IMG/aeropress-filters-2.jpg"
+                        alt="Aeropress Filters"
+                    />
+                    <h3>Aeropress Filters</h3>
+                    <p>₹650.00</p>
+                    <button class="add-to-cart" onclick="handleClick(10)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="11">
+                    <img
+                        src="IMG/coffee grinder.jpeg.webp"
+                        alt="Coffee Grinder"
+                    />
+                    <h3>Coffee Grinder</h3>
+                    <p>₹2500.00</p>
+                    <button class="add-to-cart" onclick="handleClick(11)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="12">
+                    <img
+                        src="IMG/natural filter paper.webp"
+                        alt="Hario v60 natural filter paper"
+                    />
+                    <h3>Hario v60 Natural Filter Paper</h3>
+                    <p>₹470.00</p>
+                    <button class="add-to-cart" onclick="handleClick(12)">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="product" id="13">
+                    <img
+                        src="IMG/white filter paper.jpg"
+                        alt="Hario v60 white filter paper"
+                    />
+                    <h3>Hario v60 White Filter Paper</h3>
+                    <p>₹470.00</p>
+                    <button class="add-to-cart" onclick="handleClick(13)">
+                        Add to Cart
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo-contact">
+                    <img
+                        src="IMG/main logo.png"
+                        alt="Company Logo"
+                        class="footer-logo"
+                    />
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p><strong>Call:</strong>8980477634</p>
+                        <p><strong>Email:</strong> support@r&mcoffee.co.in</p>
+                    </div>
+                </div>
+
+                <div class="footer-company">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Menu</li>
+                        <li>Blogs</li>
+                    </ul>
+                </div>
+
+                <div class="footer-policies">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li>Terms & Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Shipping Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2022 | A unit of R&M COFFEES</p>
+                <p>Powered by R&M COFFEES</p>
+            </div>
+        </footer>
+
+
+        <script src="JS/product.js"></script>
+        <script>
+            const handleClick = (product_id) => {
+                const addToCart = fetch("/AddToCart.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        product_id: product_id,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((result) => console.log(result));
+            };
+        </script>
+    </body>
+</html>

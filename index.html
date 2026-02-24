@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>R & M COFFEE-FRESHLY BREWED HAPPINESS</title>
+
+        <link rel="stylesheet" href="CSS/home.css" />
+        <link rel="stylesheet" href="CSS/footer.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav">
+                <img src="IMG/main logo.png" class="brand-logo" alt="" />
+                <ul class="links-container">
+                    <li class="link-item"><a href="index.html" class="link">HOME</a></li>
+                    <li class="link-item"><a href="#" class="link" id="menu-link">MENU</a></li>
+                    <li class="link-item"><a href="blog.html" class="link">BLOGS</a></li>
+                    <li class="link-item"><a href="#" class="link">ABOUT US</a></li>
+                    <li class="link-item nav-items">
+                        <a href="login.html"
+                            ><img src="IMG/user.jpeg" alt="User Icon"
+                        /></a>
+                        <a href="cart.html">
+                            <img src="IMG/cart.png" alt="Cart Icon"
+                        /></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <img src="IMG/main logo.png" class="logo" alt="Logo" />
+                    <p class="sub-heading">
+                        Where Every Bean is a Promise of Perfection.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <section class="product">
+            <h2 class="product-category">SIGNATURE BREWS: BESTSELLERS</h2>
+            <button class="pre-btn"><img src="IMG/arrow.png" alt="" /></button>
+            <button class="nxt-btn"><img src="IMG/arrow.png" alt="" /></button>
+            <div class="product-container">
+                <div class="product-card" id="1">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/Hazelnut-Mocha-Cafe-Latte-Imperial.jpg"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(1)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Velvet Noir</h2>
+                        <p class="product-short-des">
+                            DARKCHOCOLATE + HAZELNUT
+                        </p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="2">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/Black Cherry Coffee Float_0.jpg.webp"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(2)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Midnight Whisper</h2>
+                        <p class="product-short-des">BLACKCHERRY + DARK RUM</p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="3">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/ORANGE ZEST COF.jpeg"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(3)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Crimson Sunrise</h2>
+                        <p class="product-short-des">ORANGEZEST + CARAMEL</p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="4">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/matcha-espresso-fusion1.jpg"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(4)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Jade Serenity</h2>
+                        <p class="product-short-des">MATCHA + CONDENSEDMILK</p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="5">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/MILKLAB-Lactose-Free-Dairy-Milk-white-chocolate-and-lavender-latte.jpg"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(5)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Elysian Dream</h2>
+                        <p class="product-short-des">
+                            LAVENDER + WHITECHOCOLATE
+                        </p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="6">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/IMG_5210-featured-360x480.webp"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(6)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Ivory Cascade</h2>
+                        <p class="product-short-des">COCONUTMILK + NUTS</p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+                <div class="product-card" id="7">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img
+                            src="IMG/Iced_Cafe_Mocha.jpg"
+                            class="product-thumb"
+                            alt=""
+                        />
+                        <button class="card-btn" onclick="handleClick(7)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">Mocha Mystic</h2>
+                        <p class="product-short-des">COCOA + CINNEMON</p>
+                        <span class="price">₹250</span
+                        ><span class="actual-price">₹500</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="collection-section">
+            <div class="collection-content">
+                <h1>WHERE EVERY CUP TELLS A STORY!</h1>
+                <p>
+                    From its diverse origins to the craft of brewing, coffee culture has grown into an art form. For many, it’s not just a beverage—it’s a lifestyle.
+                </p>
+                <button class="collection-button" onclick="visitCafe()">
+                    READ MORE
+                </button>
+            </div>
+        </section>
+        <section class="usps-section">
+            <h2>USPs</h2>
+            <div class="usps-container">
+                <div class="usp-item">
+                    <img
+                        src="IMG/Screenshot 2024-10-13 at 23.11.08.png"
+                        alt="Speciality Coffee Icon"
+                        class="usp-icon"
+                    />
+                    <h3>SPECIALITY COFFEE</h3>
+                    <p>
+                        Speciality grade coffees that’s rated above 80+ on taste
+                    </p>
+                </div>
+                <div class="usp-item">
+                    <img
+                        src="IMG/Screenshot 2024-10-13 at 23.12.11.png"
+                        alt="Roasted Fresh Icon"
+                        class="usp-icon"
+                    />
+                    <h3>ROASTED FRESH</h3>
+                    <p>Freshly roasted, direct from our roastery</p>
+                </div>
+                <div class="usp-item">
+                    <img
+                        src="IMG/Screenshot 2024-10-13 at 23.12.50.png"
+                        alt="Responsibly Sourced Icon"
+                        class="usp-icon"
+                    />
+                    <h3>RESPONSIBLY SOURCED</h3>
+                    <p>Organic and biodiverse coffee partners</p>
+                </div>
+                <div class="usp-item">
+                    <img
+                        src="IMG/Screenshot 2024-10-13 at 23.13.19.png"
+                        alt="Delicious Taste Icon"
+                        class="usp-icon"
+                    />
+                    <h3>DELICIOUS TASTE</h3>
+                    <p>Making great taste accessible</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="offerings-section">
+            <h2 class="section-heading">Key Offerings</h2>
+
+            <div class="offerings-grid">
+                <div
+                    class="offering-card"
+                    style="background-image: url(&quot;IMG/beans.jpg&quot;)"
+                >
+                    <div class="offering-overlay">
+                        <a href="./beans.html" title="COFFEE BEANS"
+                            >COFFEE BEANS</a
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="offering-card"
+                    style="
+                        background-image: url(&quot;IMG/instruments.jpg&quot;);
+                    "
+                >
+                    <div class="offering-overlay">
+                        <a href="./product.html" title="Coffee Equipments"
+                            >COFFEE EQUIPMENTS</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo-contact">
+                    <img
+                        src="IMG/main logo.png"
+                        alt="Company Logo"
+                        class="footer-logo"
+                    />
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p><strong>Call:</strong>8980477634</p>
+                        <p><strong>Email:</strong> support@r&mcoffee.co.in</p>
+                    </div>
+                </div>
+
+                <div class="footer-company">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Menu</li>
+                        <li>Blogs</li>
+                    </ul>
+                </div>
+
+                <div class="footer-policies">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li>Terms & Conditions</li>
+                        <li>Privacy Policy</li>
+                        <li>Shipping Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2022 | A unit of R&M COFFEES</p>
+                <p>Powered by R&M COFFEES</p>
+            </div>
+        </footer>
+
+        <script src="JS/nav.js"></script>
+        <script src="JS/home.js"></script>
+        <script>
+            const handleClick = (product_id) => {
+                const addToCart = fetch("/AddToCart.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        product_id: product_id,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((result) => {
+                        if(!result.success) {
+                            alert(result.message);
+                            window.location.href = "/login.html";
+                        }
+                    });
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="IMG/login vid.mov" type="video/mp4"> 
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="logo">
+                <img src="IMG/main logo.png" alt="Logo">
+            </div>
+            <form id="form">
+                <input type="name" id="username" placeholder="Username/Email Address" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button class="login-btn">Login</button>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/signup.html">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const formObject = {
+                "username": username,
+                "password": password
+            };
+
+            fetch("/login.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formObject),
+            })
+                .then((response) => response.json())
+                .then((result) =>
+                    result.success
+                        ? (window.location.href = "index.html")
+                        : alert(result.message),
+                );
+        });
+    </script>
+</body>
+
